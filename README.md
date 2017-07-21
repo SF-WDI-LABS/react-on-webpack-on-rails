@@ -185,19 +185,26 @@ In `app/views/persons/show.html.erb` use the react-rails [`react_component` view
 <%= react_component "Person", { name: "Suzy", dob: "11/04/1985" }  %>
 ```
 
-Now open your browser to `http://localhost:3000/`. You should see your component rendered.
-
-Take a look at the raw source code in your browser (`View > Developer > View Source`).
-
-**Bonus**: How would you tie in a Person model? Right now we're hard coding the data. How might we retrieve it from the databse?
-
 ## Run your rails server *AND* your webpack server!!!
 You will need to run your webpack server in addition to your normal rails server (just have 2 tabs open):
 
 * `$ ./bin/webpack-dev-server` # on http://localhost:8080/`
 * `$ rails server` # on http://localhost:3000/`
 
-Live code reloading, and all the fanciness of the asset-pipeline is handled for you!
+
+Now open your browser to `http://localhost:3000/`. You should see your component rendered.
+
+Take a look at the raw source code in your browser (`View > Developer > View Source`).
+
+Now compare that output to what happens when you use the [`prerender: true`](https://github.com/reactjs/react-rails#server-side-rendering) option:
+
+``` erb
+<%= react_component "Person", { name: "Suzy", dob: "11/04/1985" }, prerender: true  %>
+```
+
+> Prerendering opens the doors for what are called "isomorphic" applications.
+
+**BONUS:** How would you tie in a Person model? Right now we're hard coding the data. How might we retrieve it from the databse?
 
 ## Resources
 
@@ -205,3 +212,4 @@ Live code reloading, and all the fanciness of the asset-pipeline is handled for 
 * [Yarn package manager](https://yarnpkg.com/en/docs/usage) & [Commands Reference](https://yarnpkg.com/en/docs/usage)
 * [`react-rails` gem](https://github.com/reactjs/react-rails)
 * [`webpacker` gem](https://github.com/rails/webpacker)
+* [AirBnB on the Isomorphic Application Pattern](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)
