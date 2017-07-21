@@ -172,7 +172,7 @@ root to: "persons#show"
 In `app/views/persons/show.html.erb` use the react-rails [`react_component` view helper](https://github.com/reactjs/react-rails#view-helper) with some stubbed data:
 
 ``` erb
-<%= react_component "Person", { name: “Suzy”, dob: "11/04/1985” }  %>
+<%= react_component "Person", { name: "Suzy", dob: "11/04/1985" }  %>
 ```
 
 Now open your browser to `http://localhost:3000/`. You should see your component rendered.
