@@ -2,18 +2,17 @@
 
 <img src="https://media1.giphy.com/media/l41YxlUqVzatpICbK/giphy.gif" width=400>
 
-Want to use React in Rails? The tools have come a long way, and there’s more support than ever.
+React on Rails? What could go wrong?
 
-What could go wrong?
+There’s more support than ever for newfangled fanciness like node packages, webpack, and react!
 
 #### Maintenance
-
 Your tools are out of date! It’s time to upgrade to the latest versions of `node`, `npm`, and `rails`!
 
 ``` bash
-brew upgrade node
-brew upgrade rails
-npm install -g npm@latest
+brew upgrade node # >= 8.2
+brew upgrade rails # >= 5.1
+npm install -g npm@latest # >= 5.2
 ```
 
 ## Rails 5.1
