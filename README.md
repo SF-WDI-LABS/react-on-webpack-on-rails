@@ -11,7 +11,7 @@ Your tools are out of date! It’s time to upgrade to the latest versions of `no
 
 ``` bash
 brew upgrade node # >= 8.2
-brew upgrade rails # >= 5.1
+gem update rails # >= 5.1
 npm install -g npm@latest # >= 5.2
 ```
 
