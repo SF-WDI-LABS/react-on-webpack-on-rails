@@ -1,6 +1,10 @@
 # Frankestein Apps
 
-Want to use React in Rails? The tools have come a long way, and there’s more support than ever. What could go wrong?
+<img src="https://media1.giphy.com/media/l41YxlUqVzatpICbK/giphy.gif" width=400>
+
+Want to use React in Rails? The tools have come a long way, and there’s more support than ever.
+
+What could go wrong?
 
 #### Maintenance
 
