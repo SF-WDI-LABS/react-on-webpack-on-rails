@@ -2,7 +2,7 @@
 
 Want to use React in Rails? The tools have come a long way, and there’s more support than ever. What could go wrong?
 
-### Maintenance
+#### Maintenance
 
 Your tools are out of date! It’s time to upgrade to the latest versions of `node`, `npm`, and `rails`!
 
@@ -16,19 +16,21 @@ npm install -g npm@latest
 
 #### Adding NPM package support to Ruby on Rails
 
-Want to use node/javascript packages in your rails app? You can do that now, in [rails 5.1](http://edgeguides.rubyonrails.org/5_1_release_notes.html), using [`yarn`](https://yarnpkg.com/en/) (a tool that supplements `npm`).
+Want to use node/javascript packages in your rails app? You can do that now, in [rails 5.1](http://edgeguides.rubyonrails.org/5_1_release_notes.html), using [`yarn`](https://yarnpkg.com/en/) (a tool that supplements/compliments `npm`).
 
 ```
 brew install yarn --ignore-dependencies
 ```
 
-Now when you generate a rails app you will see a `package.json` file (in addition to your `Gemfile`) in your rails app!
+In Rails 5.1, when you generate a rails app you will see a `package.json` file (in addition to your `Gemfile`) in your rails app!
+
+[`yarn` works just like `npm`](https://yarnpkg.com/en/docs/usage), and will replace it. So, for example, instead of `npm install`-ing, you will `yarn install`.
 
 > Just like `Gemfile` has a `Gemfile.lock`, rails 5.1. uses `yarn` and `yarn.lock` to lock in your `package.json` dependencies.
 
-#### Webpack on Rails
+## Webpack on Rails 5.1
 
-**For an existing rails app**:
+#### For an existing rails app (SKIP THIS STEP)
 
 Add the [`webpacker`](https://github.com/rails/webpacker) gem to your `Gemfile`:
 
@@ -43,7 +45,7 @@ $ bundle install
 $ rails webpacker:install
 ```
 
-**For a new rails app**:
+#### For a new rails app (DO THIS INSTEAD)
 
 ```
 rails new frankenstein --webpack
@@ -61,7 +63,7 @@ You will run your webpack server in addition to your normal rails server (just h
 
 Live code reloading, and all the fanciness of the asset-pipeline is handled for you!
 
-#### React on Webpack on Rails
+## React on Webpack on Rails
 
 Add the [`react-rails`](https://github.com/reactjs/react-rails) gem to your `Gemfile`:
 
@@ -79,7 +81,10 @@ $ rails g react:install
 
 > Note that you now have a new `components.js` file, and a `app/assets/javascripts/components/` folder for your react components.
 
+#### Looking around...
 Your updated project directory looks like this:
+
+What's new?
 
 ```
 .
@@ -113,7 +118,7 @@ Your updated project directory looks like this:
 ```
 
 
-#### Using react-rails generators / view helpers
+## Using react-rails generators / view helpers
 
 **Create a component**
 
@@ -145,7 +150,7 @@ Person.propTypes = {
 };
 ```
 
-**Create PersonsController and route**
+#### Create PersonsController and route
 
 Generate a controller, with a `show` action:
 
@@ -159,7 +164,7 @@ Add a homepage route, in `config/routes.rb`:
 root to: "persons#show"
 ```
 
-**Insert the component into the view**
+#### Insert the component into the view
 
 In `app/views/persons/show.html.erb` use the react-rails [`react_component` view helper](https://github.com/reactjs/react-rails#view-helper) with some stubbed data:
 
