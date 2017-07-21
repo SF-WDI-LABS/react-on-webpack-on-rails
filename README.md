@@ -10,9 +10,9 @@ There’s more support than ever for newfangled fanciness like node packages, we
 Your tools are out of date! It’s time to upgrade to the latest versions of `node`, `npm`, and `rails`!
 
 ``` bash
-brew upgrade node # >= 8.2
-gem update rails # >= 5.1
-npm install -g npm@latest # >= 5.2
+$ brew upgrade node # >= 8.2
+$ gem update rails # >= 5.1
+$ npm install -g npm@latest # >= 5.2
 ```
 
 ## Rails 5.1
@@ -21,8 +21,8 @@ npm install -g npm@latest # >= 5.2
 
 Want to use node/javascript packages in your rails app? You can do that now, in [rails 5.1](http://edgeguides.rubyonrails.org/5_1_release_notes.html), using [`yarn`](https://yarnpkg.com/en/) (a tool that supplements/compliments `npm`).
 
-```
-brew install yarn --ignore-dependencies
+``` bash
+$ brew install yarn --ignore-dependencies
 ```
 
 In Rails 5.1, when you generate a rails app you will see a `package.json` file (in addition to your `Gemfile`) in your rails app!
@@ -51,20 +51,13 @@ $ rails webpacker:install
 #### For a new rails app (DO THIS INSTEAD)
 
 ```
-rails new FrankensteinApp --webpack
+$ rails new FrankensteinApp --webpack
 
 # however Nathan’s preference for this app is:
-# rails new FrankensteinApp --webpack --database=postgresql --skip-coffee --skip-action-mailer --skip-test
+# $ rails new FrankensteinApp --webpack --database=postgresql --skip-coffee --skip-action-mailer --skip-test
 ```
 
 > Note that you now have a new `app/javascripts/packs/application.js` file, specifically for bundling together and serving your javascript dependencies with webpack (using the asset pipeline!).
-
-You will run your webpack server in addition to your normal rails server (just have 2 tabs open):
-
-* `./bin/webpack-dev-server` (on http://localhost:8080/)
-* `./bin/rails server` (on http://localhost:3000/)
-
-Live code reloading, and all the fanciness of the asset-pipeline is handled for you!
 
 ## React on Webpack on Rails
 
@@ -127,6 +120,16 @@ What's new?
 └── yarn.lock
 ```
 
+## Plug the webpack script into your application layout
+Our webpack-ed application javascript isn't yet available to the client.
+
+In `app/views/layouts/application.html.erb` add the following line to your `<head>`:
+
+```
+<%= javascript_pack_tag 'application' %>
+```
+
+> This is different from your normal `./app/assets/javascripts/application.rb` files! It refers instead to the webpack manifest located at `./javascripts/packs/application.js`!
 
 ## Using react-rails generators / view helpers
 
@@ -165,7 +168,7 @@ Person.propTypes = {
 Generate a controller, with a `show` action:
 
 ```
-rails g controller persons show
+$ rails g controller persons show
 ```
 
 Add a homepage route, in `config/routes.rb`:
@@ -187,6 +190,14 @@ Now open your browser to `http://localhost:3000/`. You should see your component
 Take a look at the raw source code in your browser (`View > Developer > View Source`).
 
 **Bonus**: How would you tie in a Person model? Right now we're hard coding the data. How might we retrieve it from the databse?
+
+## Run your rails server *AND* your webpack server!!!
+You will need to run your webpack server in addition to your normal rails server (just have 2 tabs open):
+
+* `$ ./bin/webpack-dev-server` # on http://localhost:8080/`
+* `$ rails server` # on http://localhost:3000/`
+
+Live code reloading, and all the fanciness of the asset-pipeline is handled for you!
 
 ## Resources
 
