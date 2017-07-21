@@ -54,7 +54,7 @@ $ rails webpacker:install
 rails new FrankensteinApp --webpack
 
 # however Nathan’s preference for this app is:
-# rails new FrankensteinApp -d=postgresql —-webpack --skip-coffee --skip-action-mailer --skip-test
+# rails new FrankensteinApp --webpack --database=postgresql --skip-coffee --skip-action-mailer --skip-test
 ```
 
 > Note that you now have a new `app/javascripts/packs/application.js` file, specifically for bundling together and serving your javascript dependencies with webpack (using the asset pipeline!).
