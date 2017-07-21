@@ -175,3 +175,10 @@ In `app/views/persons/show.html.erb` use the react-rails [`react_component` view
 Now open your browser to `http://localhost:3000/`. You should see your component rendered.
 
 Take a look at the raw source code in your browser (`View > Developer > View Source`).
+
+## Resources
+
+* [Rails 5.1 release notes](http://edgeguides.rubyonrails.org/5_1_release_notes.html)
+* [Yarn package manager](https://yarnpkg.com/en/docs/usage) & [Commands Reference](https://yarnpkg.com/en/docs/usage)
+* [`react-rails` gem](https://github.com/reactjs/react-rails)
+* [`webpacker` gem](https://github.com/rails/webpacker)
