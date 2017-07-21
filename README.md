@@ -180,6 +180,8 @@ Now open your browser to `http://localhost:3000/`. You should see your component
 
 Take a look at the raw source code in your browser (`View > Developer > View Source`).
 
+**Bonus**: How would you tie in a Person model? Right now we're hard coding the data. How might we retrieve it from the databse?
+
 ## Resources
 
 * [Rails 5.1 release notes](http://edgeguides.rubyonrails.org/5_1_release_notes.html)
