@@ -92,13 +92,12 @@ What's new?
 │   │   │   └── manifest.js
 │   │   ├── images
 │   │   ├── javascripts
-│   │   │   ├── application.js
-│   │   │   ├── components/...
-│   │   │   └── components.js
+│   │   │   └──application.js
 │   │   └── stylesheets/...
 │   ├── controllers/...
 │   ├── helpers/...
 │   ├── javascript
+│   │   ├── components/...
 │   │   └── packs
 │   │       └── application.js
 │   ├── models/...
@@ -129,7 +128,7 @@ In `app/views/layouts/application.html.erb` add the following line to your `<hea
 <%= javascript_pack_tag 'application' %>
 ```
 
-> This is different from your normal `./app/assets/javascripts/application.rb` files! It refers instead to the webpack manifest located at `./javascripts/packs/application.js`!
+> This is different from your normal `./app/assets/javascripts/application.rb` files! It refers instead to the webpack manifest located at `./app/javascripts/packs/application.js`!
 
 ## Using react-rails generators / view helpers
 
