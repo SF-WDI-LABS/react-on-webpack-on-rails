@@ -82,6 +82,8 @@ $ rails webpacker:install:react
 $ rails g react:install
 ```
 
+> If `rails g react:install` just hangs forever, please open a new terminal, run `spring stop`, and try again.
+
 > Note that you now have a new `components.js` file, and a `app/assets/javascripts/components/` folder for your react components.
 
 #### Looking around...
