@@ -192,7 +192,7 @@ You will need to run your webpack server in addition to your normal rails server
 
 
 Now open your browser to `http://localhost:3000/`. You should see your component rendered.
-
+<!--
 Take a look at the raw source code in your browser (`View > Developer > View Source`).
 
 Now compare that output to what happens when you use the [`prerender: true`](https://github.com/reactjs/react-rails#server-side-rendering) option:
@@ -202,7 +202,7 @@ Now compare that output to what happens when you use the [`prerender: true`](htt
 ```
 
 > Prerendering opens the doors for what are called "isomorphic" applications.
-
+ -->
 **BONUS:** How would you tie in a Person model? Right now we're hard coding the data. How might we retrieve it from the databse?
 
 ## Resources
