@@ -142,7 +142,7 @@ $ rails g react:component Person name:string dob:string --es6  # note: es6 is op
 
 > Keep in mind that our types now refer to javascript datatypes, NOT RUBY datatypes!!!
 
-This will generate a new file called `app/assets/javascripts/components/person.es6.jsx`:
+This will generate a new file called `app/javascripts/components/person.es6.jsx`:
 
 ``` js
 class Person extends React.Component {
